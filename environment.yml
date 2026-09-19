@@ -1,0 +1,12 @@
+# Alternativa para quien use Anaconda o Miniconda:
+#   conda env create -f environment.yml
+#   conda activate numa
+#   streamlit run app.py
+name: numa
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - -r requirements.txt

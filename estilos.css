@@ -1,0 +1,256 @@
+/* ------------------------------------------------------------------
+   Numa · estilos que el tema de Streamlit no cubre
+   Los contenedores se estilizan con st.container(key="...")
+   que Streamlit convierte en la clase .st-key-...
+
+   Forma de la casa: esquinas cortadas (chaflán). Se consiguen con
+   corner-shape: bevel sobre el border-radius; en navegadores sin
+   soporte quedan esquinas redondeadas, que es un degradado aceptable.
+   ------------------------------------------------------------------ */
+
+:root {
+  --ciruela: #120814;
+  --terciopelo: #1D0F22;
+  --berenjena: #2A1631;
+  --malva: #4A2E52;
+  --nacar: #F6E9F2;
+  --lila: #B9A3C2;
+  --orquidea: #FF4FA8;
+  --lavanda: #C08CFF;
+  --durazno: #FFB38A;
+  --menta: #7FF5D0;
+  --coral: #FF6B7A;
+  --titulos: chakrapetch, "Segoe UI", sans-serif;
+  --texto: rajdhani, "Segoe UI", sans-serif;
+  --mono: plexmono, Consolas, monospace;
+}
+
+/* Títulos: Chakra Petch, sin cursiva, con un poco de aire entre letras */
+h1, h2, h3, h4 { font-style: normal !important; letter-spacing: 0.01em; text-wrap: balance; }
+
+::selection { background: var(--orquidea); color: var(--ciruela); }
+
+/* Cabecera de Streamlit transparente */
+header[data-testid="stHeader"] { background: transparent; }
+
+/* ------------------------------ Esquinas cortadas ------------------------------ */
+
+.stButton button,
+.stDownloadButton button,
+[data-testid="stButtonGroup"] button,
+[data-baseweb="input"],
+[data-baseweb="base-input"],
+[data-testid="stNumberInputContainer"],
+[data-testid="stCode"] pre,
+[data-testid="stAlertContainer"],
+[data-testid="stExpander"] details,
+[data-testid="stMetric"] {
+  corner-shape: bevel;
+}
+
+/* ------------------------------ Barra lateral ------------------------------ */
+
+.marca { display: flex; align-items: center; gap: 10px; }
+.marca-nombre {
+  font-family: var(--titulos); font-weight: 700; font-size: 1.85rem;
+  line-height: 1; letter-spacing: 0.05em; color: var(--nacar);
+}
+.marca-lema { font-size: 0.9rem; color: var(--lila); margin: 6px 0 22px; }
+
+/* Rótulo de sección del menú */
+.nav-titulo {
+  font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
+  color: var(--lila); margin: 0 0 4px 12px;
+}
+
+/* Ítems del menú: botones a lo ancho, texto a la izquierda, sin píldora */
+.st-key-nav button {
+  justify-content: flex-start;
+  min-height: 2.5rem;
+  padding: 0.3rem 0.75rem;
+  border: 0;
+  border-left: 3px solid transparent;
+  border-radius: 0;
+  corner-shape: square;
+  background: transparent;
+  color: var(--nacar);
+}
+.st-key-nav button > div,
+.st-key-nav button > div > span { justify-content: flex-start; }
+.st-key-nav button p { text-align: left; }
+.st-key-nav button:hover { background: var(--berenjena); border-left-color: var(--malva); }
+.st-key-nav button strong {
+  display: inline-block; min-width: 1.5em;
+  font-family: var(--titulos); font-weight: 600; color: var(--lavanda);
+}
+/* "Inicio" lleva el icono de casa en la columna de los números */
+.st-key-nav-inicio button [data-testid="stIconMaterial"] {
+  width: 1.5em; color: var(--lavanda); font-size: 1.2rem; margin: 0 0 0 4px;
+}
+/* Ítem activo: fondo berenjena y barra de neón, el texto sigue en nácar */
+.st-key-nav button[data-testid="stBaseButton-primary"] {
+  background: var(--berenjena);
+  border-left-color: var(--orquidea);
+  box-shadow: inset 4px 0 14px -8px var(--orquidea);
+}
+.st-key-nav button[data-testid="stBaseButton-primary"],
+.st-key-nav button[data-testid="stBaseButton-primary"] p { color: var(--nacar) !important; }
+.st-key-nav button[data-testid="stBaseButton-primary"] strong { color: var(--lavanda) !important; }
+
+/* Créditos al pie del menú */
+.creditos {
+  border-top: 1px solid var(--malva); margin-top: 20px; padding-top: 14px;
+  font-size: 0.85rem; color: var(--lila); line-height: 1.4;
+}
+.creditos-nombre { color: var(--nacar); font-weight: 600; font-size: 1rem; }
+.creditos-detalle { margin-bottom: 14px; }
+
+/* ------------------------------ Título y submenú ------------------------------ */
+
+.titulo-modulo {
+  font-family: var(--titulos); font-weight: 700; font-size: 2.5rem;
+  line-height: 1.15; margin: 0 0 14px; color: var(--nacar);
+}
+.titulo-modulo .numero { color: var(--lavanda); }
+
+/* Submenú: píldoras grandes con el número en lavanda; la activa se rellena de neón */
+div[class*="st-key-submenu-"] [data-testid="stButtonGroup"] { gap: 8px; }
+div[class*="st-key-submenu-"] button {
+  min-height: 2.6rem;
+  padding: 0.35rem 1rem;
+  background: var(--berenjena);
+  border: 1px solid var(--malva);
+  border-radius: 0.5rem;
+  color: var(--nacar);
+}
+div[class*="st-key-submenu-"] button p { font-size: 1.02rem; font-weight: 600; }
+div[class*="st-key-submenu-"] button strong { color: var(--lavanda); font-family: var(--titulos); margin-right: 0.35em; }
+/* !important porque Streamlit fija el fondo de la píldora activa con más peso */
+div[class*="st-key-submenu-"] button[aria-checked="true"] {
+  background: var(--orquidea) !important;
+  border-color: var(--orquidea) !important;
+  box-shadow: 0 0 18px -4px var(--orquidea);
+}
+div[class*="st-key-submenu-"] button[aria-checked="true"] p,
+div[class*="st-key-submenu-"] button[aria-checked="true"] strong { color: var(--ciruela) !important; }
+
+/* ------------------------------ Tarjetas ------------------------------ */
+
+/* Tarjeta de resultado: borde de neón con brillo.
+   Cubre st.container(key="resultado") y las variantes key="resultado-1-6", etc. */
+div[class*="st-key-resultado"] {
+  border: 1px solid var(--orquidea);
+  border-radius: 22px;
+  corner-shape: bevel;
+  background: var(--terciopelo);
+  box-shadow: 0 0 28px -8px var(--orquidea);
+  padding: 30px 26px 26px;
+  text-align: center;
+}
+.resultado-etiqueta { color: var(--lila); font-size: 0.95rem; }
+.resultado-valor {
+  font-family: var(--titulos); font-weight: 700;
+  font-size: 5rem; line-height: 1.05; color: var(--durazno);
+  text-shadow: 0 0 24px rgba(255, 179, 138, 0.35);
+  overflow-wrap: anywhere;
+}
+/* Valores medianos (palabras cifradas, frases cortas) */
+.resultado-valor.compacto { font-size: 2.4rem; line-height: 1.15; }
+/* Hashes, binarios y Base64: en monoespaciada, a cuerpo de lectura */
+.resultado-valor.largo {
+  font-family: var(--mono); font-weight: 500; font-size: 1.05rem;
+  line-height: 1.5; text-shadow: none; padding: 6px 0 2px;
+}
+.verificacion { font-family: var(--mono); color: var(--menta); margin-top: 14px; }
+
+/* Tarjeta sin resultado todavía */
+.resultado-espera { color: var(--lila); font-size: 0.95rem; padding: 12px 0 22px; }
+
+/* Chips con los datos clave del resultado */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 14px; }
+.chip {
+  background: var(--berenjena);
+  border: 1px solid var(--malva);
+  color: var(--nacar);
+  padding: 3px 12px;
+  border-radius: 8px;
+  corner-shape: bevel;
+  font-size: 0.8rem;
+  font-family: var(--mono);
+}
+
+/* Tarjetas de módulo en la portada */
+div[class*="st-key-modulo-"] {
+  border: 1px solid var(--malva);
+  border-radius: 18px;
+  corner-shape: bevel;
+  background: var(--terciopelo);
+  padding: 26px 20px 18px;
+  text-align: center;
+}
+/* Misma altura en la fila: la tarjeta llena la columna y el botón queda abajo */
+[data-testid="stLayoutWrapper"]:has(> div[class*="st-key-modulo-"]) { height: 100%; }
+div[class*="st-key-modulo-"] { height: 100%; justify-content: space-between; }
+.modulo-numero { font-family: var(--titulos); font-weight: 700; font-size: 2.2rem; color: var(--lavanda); line-height: 1; }
+.modulo-titulo { font-family: var(--titulos); font-weight: 600; font-size: 1.15rem; color: var(--nacar); margin-top: 6px; }
+.modulo-texto { font-size: 0.95rem; color: var(--lila); margin-top: 4px; }
+
+/* Tarjeta neutra (formularios y tablas).
+   Cubre st.container(key="panel") y las variantes key="panel-1-6", etc. */
+div[class*="st-key-panel"] {
+  border: 1px solid var(--malva);
+  border-radius: 18px;
+  corner-shape: bevel;
+  background: var(--terciopelo);
+  padding: 24px 28px;
+}
+
+/* ------------------------------ Procedimiento paso a paso ------------------------------ */
+
+.pasos { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.paso {
+  display: grid; grid-template-columns: 2rem 1fr; gap: 12px; align-items: start;
+  padding: 10px 14px 10px 10px;
+  background: var(--berenjena);
+  border-left: 3px solid var(--malva);
+  border-radius: 8px;
+  corner-shape: bevel;
+}
+.paso-numero {
+  font-family: var(--titulos); font-weight: 700; font-size: 1.25rem; line-height: 1.35;
+  color: var(--lavanda); text-align: center;
+}
+.paso-texto { line-height: 1.5; overflow-wrap: anywhere; }
+.paso-texto strong { font-family: var(--titulos); font-weight: 600; color: var(--nacar); }
+
+/* ------------------------------ Botones ------------------------------ */
+
+.stButton button, .stDownloadButton button { min-height: 2.6rem; }
+.stButton button p, .stDownloadButton button p { font-weight: 600; }
+
+/* Sobre el neón del botón primario el texto va en ciruela, nunca en blanco */
+button[data-testid="stBaseButton-primary"],
+button[data-testid="stBaseButton-primary"] p {
+  color: var(--ciruela) !important;
+}
+
+/* Foco visible con teclado */
+button:focus-visible, input:focus-visible, a:focus-visible {
+  outline: 2px solid var(--lavanda) !important;
+  outline-offset: 3px;
+}
+
+/* ------------------------------ Pantallas angostas ------------------------------ */
+
+@media (max-width: 640px) {
+  [data-testid="stMainBlockContainer"] { padding-top: 3.5rem; }
+  .titulo-modulo { font-size: 1.9rem; }
+  .resultado-valor { font-size: 3.6rem; }
+  .resultado-valor.compacto { font-size: 2rem; }
+  div[class*="st-key-panel"] { padding: 18px 16px; }
+  div[class*="st-key-resultado"] { padding: 24px 16px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

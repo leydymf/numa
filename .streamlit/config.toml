@@ -1,0 +1,100 @@
+# ------------------------------------------------------------------
+#  Numa · tema visual de la aplicación
+#  Paleta 60/30/10: fondos ciruela, superficies malva, acentos neón
+#  Tipografía: Chakra Petch (títulos y resultados), Rajdhani (texto)
+#  e IBM Plex Mono (hashes, binarios y tablas). Nada en cursiva.
+# ------------------------------------------------------------------
+
+[server]
+# Sirve la carpeta static/ (fuentes locales: la app se ve igual sin internet)
+enableStaticServing = true
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
+
+[theme]
+base = "dark"
+primaryColor = "#FF4FA8"              # Orquídea neón: acción principal y selección
+backgroundColor = "#120814"           # Ciruela noche: fondo
+secondaryBackgroundColor = "#2A1631"  # Berenjena: campos y widgets
+textColor = "#F6E9F2"                 # Nácar: texto principal
+linkColor = "#C08CFF"                 # Lavanda eléctrica
+codeTextColor = "#FFB38A"             # Durazno neón: resultados
+codeBackgroundColor = "#1D0F22"       # Terciopelo
+borderColor = "#4A2E52"               # Malva humo
+showWidgetBorder = true
+dataframeBorderColor = "#4A2E52"
+dataframeHeaderBackgroundColor = "#1D0F22"
+greenColor = "#7FF5D0"                # Menta hielo: verificación correcta
+redColor = "#FF6B7A"                  # Coral: errores
+violetColor = "#C08CFF"
+orangeColor = "#FFB38A"
+# Los radios se convierten en esquinas cortadas (chaflán) desde estilos.css
+baseRadius = "0.5rem"
+buttonRadius = "0.5rem"
+font = "rajdhani, 'Segoe UI', sans-serif"
+# Rajdhani es condensada y ligera: un punto más de cuerpo y de grosor para leer cómodo
+baseFontSize = 17
+baseFontWeight = 500
+headingFont = "chakrapetch, 'Segoe UI', sans-serif"
+headingFontSizes = ["2.5rem", "1.75rem", "1.4rem", "1.15rem"]
+headingFontWeights = [700, 600, 600, 600]
+codeFont = "plexmono, Consolas, monospace"
+chartCategoricalColors = ["#FF4FA8", "#C08CFF", "#FFB38A", "#7FF5D0", "#FF6B7A"]
+
+[[theme.fontFaces]]
+family = "chakrapetch"
+url = "app/static/fuentes/ChakraPetch-Regular.ttf"
+weight = 400
+
+[[theme.fontFaces]]
+family = "chakrapetch"
+url = "app/static/fuentes/ChakraPetch-Medium.ttf"
+weight = 500
+
+[[theme.fontFaces]]
+family = "chakrapetch"
+url = "app/static/fuentes/ChakraPetch-SemiBold.ttf"
+weight = 600
+
+[[theme.fontFaces]]
+family = "chakrapetch"
+url = "app/static/fuentes/ChakraPetch-Bold.ttf"
+weight = 700
+
+[[theme.fontFaces]]
+family = "rajdhani"
+url = "app/static/fuentes/Rajdhani-Regular.ttf"
+weight = 400
+
+[[theme.fontFaces]]
+family = "rajdhani"
+url = "app/static/fuentes/Rajdhani-Medium.ttf"
+weight = 500
+
+[[theme.fontFaces]]
+family = "rajdhani"
+url = "app/static/fuentes/Rajdhani-SemiBold.ttf"
+weight = 600
+
+[[theme.fontFaces]]
+family = "rajdhani"
+url = "app/static/fuentes/Rajdhani-Bold.ttf"
+weight = 700
+
+[[theme.fontFaces]]
+family = "plexmono"
+url = "app/static/fuentes/IBMPlexMono-Regular.ttf"
+weight = 400
+
+[[theme.fontFaces]]
+family = "plexmono"
+url = "app/static/fuentes/IBMPlexMono-Medium.ttf"
+weight = 500
+
+[theme.sidebar]
+backgroundColor = "#1D0F22"           # Terciopelo
+secondaryBackgroundColor = "#2A1631"
