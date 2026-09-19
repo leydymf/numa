@@ -285,6 +285,8 @@ lavanda y su título en negrita (`html_pasos` en `app.py`).
 
 ## 7. PDF de ejemplos
 
+- `python pdf_entrega.py` genera `entrega.pdf`, el documento de entrega (qué se entrega, enlaces,
+  qué hacer si la app en línea duerme y cómo ejecutarla), con el mismo estilo.
 - `python pdf_ejemplos.py` genera `ejemplos.pdf`. En la app, el botón de la barra lateral lo genera en memoria con `st.download_button`.
 - Usa las mismas funciones de `cripto.py` y los datos de `ejemplos.py`; ningún resultado se escribe a mano.
 - Versión clara para imprimir: fondo blanco, texto `#120814`, títulos en Chakra Petch, texto en Rajdhani (Rajdhani-Medium como regular) y acentos en `#FF4FA8` y `#C08CFF`. Registrar las TTF de `static/fuentes/` con `add_font` para tener tildes y Ñ. Si un símbolo no existe en la fuente (p. ej. φ), escribir "phi(n)".

@@ -75,6 +75,8 @@ mismas funciones de `cripto.py` que usa la app, a partir del catálogo de
 │                           el PDF y las pruebas
 ├── pdf_ejemplos.py         Genera ejemplos.pdf con fpdf2
 ├── ejemplos.pdf            El PDF generado (un ejemplo por submenú)
+├── pdf_entrega.py          Genera entrega.pdf, el documento de entrega
+├── entrega.pdf             Qué se entrega, enlaces y cómo ejecutar la app
 ├── estilos.css             Estilos propios del diseño Numa
 ├── requirements.txt        Dependencias con versión fija
 ├── requirements-dev.txt    Lo anterior + pytest (solo para desarrollo)
