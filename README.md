@@ -7,7 +7,7 @@ muestra el resultado, los datos clave, la tabla del método y el procedimiento
 paso a paso, y los cifrados incluyen un botón "Verificar" que aplica la
 operación inversa para comprobar que se recupera el original.
 
-**App en línea:** [pega aquí el link de Streamlit Community Cloud]
+**App en línea:** https://numa-cripto.streamlit.app
 
 ## Cómo ejecutarla en tu computador
 

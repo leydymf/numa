@@ -6,8 +6,9 @@ Este archivo es el contexto permanente del proyecto. Léelo completo antes de ca
 
 Proyecto universitario de criptografía. Es una calculadora con interfaz gráfica hecha en
 Python con Streamlit, con 6 módulos y sus submenús. Se entrega el código `.py`, un PDF con
-un ejemplo resuelto por cada submenú, y se sustenta en clase. La app se despliega en
-Streamlit Community Cloud y también debe correr en el PC del profesor con
+un ejemplo resuelto por cada submenú, y se sustenta en clase. La app está desplegada en
+Streamlit Community Cloud (https://numa-cripto.streamlit.app, desde el repositorio
+https://github.com/leydymf/numa) y también debe correr en el PC del profesor con
 `iniciar_windows.bat`.
 
 Quien sustenta debe poder explicar cada línea, así que el código prioriza la claridad
