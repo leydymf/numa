@@ -93,8 +93,8 @@ def generar_pdf() -> bytes:
     _parrafo(pdf, "El proyecto se entrega de tres formas, y las tres contienen lo mismo:")
     pdf.ln(2)
     _pasos(pdf, [
-        "**Una carpeta con el código fuente.** Lista para ejecutar en cualquier computador "
-        "con Python. Dentro va el archivo README.md, que explica en detalle cómo instalar y "
+        "**Una carpeta con el código fuente, llamada numa-codigo.** Lista para ejecutar en "
+        "cualquier computador con Python. Dentro va el archivo README.md, que explica en detalle cómo instalar y "
         "ejecutar la aplicación, y el archivo ejemplos.pdf, con un ejemplo resuelto y explicado "
         "de cada uno de los 26 submenús.",
         "**La aplicación publicada en internet.** Para usarla sin instalar nada, desde el "
